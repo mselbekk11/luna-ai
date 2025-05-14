@@ -119,8 +119,8 @@ export default function HeroSection() {
                   as="p"
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                 >
-                  Highly customizable components for building modern websites
-                  and applications that look and feel the way you mean it.
+                  Use AI to streamline your CPG product reformulation. From
+                  ingredient swaps to regulatory compliance.
                 </TextEffect>
 
                 <AnimatedGroup
