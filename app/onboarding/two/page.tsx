@@ -1,8 +1,7 @@
 "use client";
 
-import OnboardingCard, {
-  useOnboardingNavigation,
-} from "@/components/OnboardingCard";
+import OnboardingCard from "@/components/OnboardingCard";
+import { ContinueButton } from "@/components/continue-button";
 import { useOnboardingForm } from "@/app/hooks/useOnboardingForm";
 
 interface PersonalInfoForm {
@@ -63,22 +62,11 @@ export default function OnboardingTwo() {
 
       {/* Positioned at the end of the form */}
       <div className="flex justify-end mt-10">
-        <ContinueButton />
+        <ContinueButton
+          className="justify-end"
+          buttonClassName="px-8 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+        />
       </div>
     </OnboardingCard>
-  );
-}
-
-// Separate component to use the context
-function ContinueButton() {
-  const { handleNext, isLastStep } = useOnboardingNavigation();
-
-  return (
-    <button
-      onClick={handleNext}
-      className="px-8 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-    >
-      {isLastStep ? "Finish" : "Continue"}
-    </button>
   );
 }

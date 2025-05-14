@@ -1,8 +1,7 @@
 "use client";
 
-import OnboardingCard, {
-  useOnboardingNavigation,
-} from "@/components/OnboardingCard";
+import OnboardingCard from "@/components/OnboardingCard";
+import { ContinueButton } from "@/components/continue-button";
 
 export default function OnboardingThree() {
   return (
@@ -30,23 +29,8 @@ export default function OnboardingThree() {
 
       {/* Fixed at the bottom */}
       <div className="absolute bottom-20 left-0 right-0">
-        <div className="flex justify-center">
-          <ContinueButton />
-        </div>
+        <ContinueButton buttonClassName="px-10 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:from-blue-600 hover:to-purple-700 transition shadow-md" />
       </div>
     </OnboardingCard>
-  );
-}
-
-function ContinueButton() {
-  const { handleNext, isLastStep } = useOnboardingNavigation();
-
-  return (
-    <button
-      onClick={handleNext}
-      className="px-10 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:from-blue-600 hover:to-purple-700 transition shadow-md"
-    >
-      {isLastStep ? "Finish" : "Continue"}
-    </button>
   );
 }

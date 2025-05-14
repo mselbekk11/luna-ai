@@ -1,8 +1,8 @@
 export const LogoOnboarding = () => {
   return (
     <svg
-      width="102"
-      height="105"
+      width="72"
+      height="75"
       viewBox="0 0 102 105"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
