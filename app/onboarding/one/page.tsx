@@ -1,5 +1,6 @@
 "use client";
 
+import { LogoOnboarding } from "@/components/logo-onboarding";
 import OnboardingCard, {
   useOnboardingNavigation,
 } from "@/components/OnboardingCard";
@@ -7,20 +8,16 @@ import OnboardingCard, {
 export default function OnboardingOne() {
   return (
     <OnboardingCard step={1} totalSteps={7}>
-      <h2 className="text-2xl font-bold">Welcome to Luna</h2>
-      <p className="text-gray-600">
-        Let&apos;s get you set up with everything you need to get started. This
-        is step one of our onboarding process.
-      </p>
-      <div className="mt-4">
-        {/* Step-specific content here */}
-        <p className="text-sm text-gray-500">
-          This first step introduces you to our platform.
-        </p>
+      <div className="flex flex-col items-center gap-8">
+        <LogoOnboarding />
+        <div className="flex flex-col items-center gap-2">
+          <h2 className="text-4xl font-bold">Welcome to Luna AI</h2>
+          <p className="text-gray-400 text-lg">
+            Lets get you set up with your first product
+          </p>
+        </div>
+        <ContinueButton />
       </div>
-
-      {/* Custom positioned Continue button */}
-      <ContinueButton />
     </OnboardingCard>
   );
 }
@@ -30,7 +27,7 @@ function ContinueButton() {
   const { handleNext, isLastStep } = useOnboardingNavigation();
 
   return (
-    <div className="flex justify-center mt-12">
+    <div className="flex justify-center">
       <button
         onClick={handleNext}
         className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"

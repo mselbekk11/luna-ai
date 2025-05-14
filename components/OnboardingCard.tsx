@@ -67,7 +67,9 @@ export default function OnboardingCard({
           </button>
         )}
 
-        <div className="space-y-4 flex-grow">{children}</div>
+        <div className="space-y-4 flex-grow flex flex-col justify-center">
+          {children}
+        </div>
 
         {/* Step indicators as circles in a row - fixed at bottom */}
         <div className="flex justify-center space-x-3 absolute bottom-8 left-0 right-0">
