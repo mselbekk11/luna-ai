@@ -1,5 +1,6 @@
 "use client";
 
+import FooterSection from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <>
       <main className="">
         <HeroSection />
+        <FooterSection />
       </main>
     </>
   );
