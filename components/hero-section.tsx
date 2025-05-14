@@ -82,7 +82,7 @@ export default function HeroSection() {
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <Link
-                    href="#link"
+                    href="/sign-in"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
                     <span className="text-foreground text-sm">
@@ -185,7 +185,7 @@ export default function HeroSection() {
                   className="bg-linear-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
                 />
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                  <Image
+                  {/* <Image
                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                     src="/mail2.png"
                     alt="app screen"
@@ -198,7 +198,7 @@ export default function HeroSection() {
                     alt="app screen"
                     width="2700"
                     height="1440"
-                  />
+                  /> */}
                 </div>
               </div>
             </AnimatedGroup>
