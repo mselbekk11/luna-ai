@@ -45,9 +45,9 @@ export const LogoOnboarding = () => {
           width="102"
           height="105"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -80,9 +80,9 @@ export const LogoOnboarding = () => {
           y2="103"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#252528" />
-          <stop offset="0.5188" stop-color="#1C1C1E" />
-          <stop offset="1" stop-color="#141415" />
+          <stop stopColor="#252528" />
+          <stop offset="0.5188" stopColor="#1C1C1E" />
+          <stop offset="1" stopColor="#141415" />
         </linearGradient>
       </defs>
     </svg>
