@@ -11,7 +11,4 @@ export default defineSchema({
     name: v.string(),
     email: v.string(),
   }).index("by_token", ["tokenIdentifier"]),
-  numbers: defineTable({
-    value: v.number(),
-  }),
 });
