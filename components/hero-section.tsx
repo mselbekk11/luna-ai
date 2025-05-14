@@ -156,7 +156,7 @@ export default function HeroSection() {
                       className="rounded-xl px-5 text-base"
                     >
                       <Link href="/sign-in">
-                        <span className="text-nowrap">Start Building</span>
+                        <span className="text-nowrap">Get Started</span>
                       </Link>
                     </Button>
                   </div>
