@@ -14,7 +14,7 @@ export function AuthLayout({ children }: AuthLayoutProps) {
           backgroundRepeat: "repeat",
           backgroundSize: "500px",
           opacity: 1,
-          backgroundColor: "#27272a" /* matching the zinc-800 from video.tsx */,
+          backgroundColor: "#000000" /* matching the zinc-800 from video.tsx */,
         }}
       ></div>
       <div className="relative z-10 w-full flex flex-col items-center justify-center ">
