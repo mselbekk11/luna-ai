@@ -1,26 +1,76 @@
 "use client";
 
+import { ContinueButton } from "@/components/continue-button";
 import OnboardingCard from "@/components/OnboardingCard";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { motion } from "motion/react";
 
 export default function OnboardingFour() {
   return (
     <OnboardingCard step={4} totalSteps={7}>
-      <h2 className="text-2xl font-bold">Interests</h2>
-      <p className="text-gray-600">
-        Select topics you&apos;re interested in to help us tailor your content.
-      </p>
-      <div className="mt-4 grid grid-cols-2 gap-2">
-        {/* Interest tags would go here */}
-        {["Technology", "Science", "Art", "Music", "Travel", "Food"].map(
-          (interest) => (
-            <div
-              key={interest}
-              className="px-3 py-2 bg-blue-100 text-blue-800 rounded-md cursor-pointer hover:bg-blue-200 transition"
-            >
-              {interest}
-            </div>
-          ),
-        )}
+      <div className="flex flex-col items-center gap-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.3,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <h2 className="text-3xl font-bold">Choose a Region</h2>
+          <p className="text-gray-400 text-lg">
+            This will help us identify banned ingredients in your region
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.6,
+          }}
+        >
+          <Select>
+            <SelectTrigger className="w-[300px]">
+              <SelectValue placeholder="Choose a region" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="United States">North America</SelectItem>
+              <SelectItem value="United States">South America</SelectItem>
+              <SelectItem value="European Union">Europe</SelectItem>
+              <SelectItem value="South Africa">Africa</SelectItem>
+              <SelectItem value="South Africa">Antarctica</SelectItem>
+              <SelectItem value="India">Asia</SelectItem>
+              <SelectItem value="China">Oceania</SelectItem>
+              <SelectItem value="Global Distribution">
+                Global Distribution
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.9,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <ContinueButton />
+        </motion.div>
       </div>
     </OnboardingCard>
   );
