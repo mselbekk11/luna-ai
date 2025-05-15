@@ -67,16 +67,22 @@ const secondaryObjectives = [
 
 export default function OnboardingFive() {
   const [selectedPrimary, setSelectedPrimary] = useState<string | null>(null);
-  const [selectedSecondary, setSelectedSecondary] = useState<string | null>(
-    null,
-  );
+  const [selectedSecondary, setSelectedSecondary] = useState<string[]>([]);
 
   const handlePrimarySelect = (primaryName: string) => {
     setSelectedPrimary(primaryName);
   };
 
   const handleSecondarySelect = (secondaryName: string) => {
-    setSelectedSecondary(secondaryName);
+    setSelectedSecondary((prev) => {
+      if (prev.includes(secondaryName)) {
+        // Remove if already selected
+        return prev.filter((name) => name !== secondaryName);
+      } else {
+        // Add if not already selected
+        return [...prev, secondaryName];
+      }
+    });
   };
 
   return (
@@ -109,9 +115,7 @@ export default function OnboardingFive() {
           <div className="flex flex-col gap-4">
             <div className="flex justify-between">
               <p className="text-sm font-semibold">Primary Objective </p>
-              <p className="text-gray-600 text-sm font-semibold">
-                Choose 1 option
-              </p>
+              <p className="text-gray-600 text-sm">Choose 1 option</p>
             </div>
             <div className="grid grid-cols-4 gap-4 min-w-[750px]">
               {primaryObjectives.map((primary) => {
@@ -152,13 +156,11 @@ export default function OnboardingFive() {
           <div className="flex flex-col gap-4">
             <div className="flex justify-between">
               <p className="text-sm font-semibold">Secondary Objectives</p>
-              <p className="text-gray-600 text-sm font-semibold">
-                Choose multiple
-              </p>
+              <p className="text-gray-600 text-sm">Choose multiple</p>
             </div>
             <div className="grid grid-cols-5 gap-4 min-w-[750px]">
               {secondaryObjectives.map((secondary) => {
-                const isSelected = selectedSecondary === secondary.name;
+                const isSelected = selectedSecondary.includes(secondary.name);
                 return (
                   <button
                     key={secondary.name}
