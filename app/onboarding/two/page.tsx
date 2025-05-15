@@ -2,70 +2,83 @@
 
 import OnboardingCard from "@/components/OnboardingCard";
 import { ContinueButton } from "@/components/continue-button";
-import { useOnboardingForm } from "@/app/hooks/useOnboardingForm";
+import { motion } from "motion/react";
+import Snacks from "@/components/food-icons/snacks";
+import FastFood from "@/components/food-icons/fast-food";
+import Beverages from "@/components/food-icons/beverages";
+import BakedGoods from "@/components/food-icons/baked-goods";
+import BreakfastFoods from "@/components/food-icons/breakfast-foods";
+import Dairy from "@/components/food-icons/dairy";
+import DogFood from "@/components/food-icons/dog-food";
+import Confectionairy from "@/components/food-icons/confectionary";
 
-interface PersonalInfoForm {
-  fullName: string;
-  email: string;
-}
+const categories = [
+  {
+    name: "Snacks",
+    icon: Snacks,
+  },
+  {
+    name: "Fast Food",
+    icon: FastFood,
+  },
+  {
+    name: "Beverages",
+    icon: Beverages,
+  },
+  {
+    name: "Baked Goods",
+    icon: BakedGoods,
+  },
+  {
+    name: "BreakFast Food",
+    icon: BreakfastFoods,
+  },
+  {
+    name: "Dairy",
+    icon: Dairy,
+  },
+  {
+    name: "Pet Food",
+    icon: DogFood,
+  },
+  {
+    name: "Confectionary",
+    icon: Confectionairy,
+  },
+];
 
 export default function OnboardingTwo() {
-  const { formData, handleInputChange, saveFormData } =
-    useOnboardingForm<PersonalInfoForm>({
-      fullName: "",
-      email: "",
-    });
-
   return (
-    <OnboardingCard step={2} totalSteps={7} onBeforeNext={saveFormData}>
-      <h2 className="text-2xl font-bold">Personal Information</h2>
-      <p className="text-gray-600">
-        Tell us a bit about yourself so we can personalize your experience.
-      </p>
-      <div className="mt-4 space-y-4">
-        <div className="space-y-2">
-          <label
-            htmlFor="fullName"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter your full name"
-          />
+    <OnboardingCard step={2} totalSteps={7}>
+      <div className="flex flex-col items-center gap-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.3,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <h2 className="text-3xl font-bold">Choose a product category</h2>
+          <p className="text-gray-400 text-lg">
+            This will help us personalize your experience
+          </p>
+        </motion.div>
+        <div className="grid grid-cols-4 gap-4">
+          {categories.map((category) => (
+            <div
+              key={category.name}
+              className="flex flex-col items-center gap-2 px-8 py-6 border border-[#33353B] rounded-sm"
+            >
+              <category.icon />
+              <p className="text-gray-400 text-sm font-semibold">{category.name}</p>
+            </div>
+          ))}
         </div>
 
-        <div className="space-y-2">
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter your email address"
-          />
-        </div>
-      </div>
-
-      {/* Positioned at the end of the form */}
-      <div className="flex justify-end mt-10">
-        <ContinueButton
-          className="justify-end"
-          buttonClassName="px-8 py-2.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
-        />
+        <ContinueButton />
       </div>
     </OnboardingCard>
   );
