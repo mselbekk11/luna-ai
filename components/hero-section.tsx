@@ -86,7 +86,7 @@ export default function HeroSection() {
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
                   >
                     <span className="text-foreground text-sm">
-                      AI-Powered Product Formulation Expertise
+                      AI-Powered Product Formulation Software
                     </span>
                     <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
@@ -107,7 +107,7 @@ export default function HeroSection() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mt-8 text-balance text-6xl md:text-6xl lg:mt-16"
+                  className="mt-8 text-balance text-3xl md:text-6xl lg:mt-16"
                 >
                   Meet Luna AI
                 </TextEffect>
@@ -116,7 +116,7 @@ export default function HeroSection() {
                   speedSegment={0.3}
                   as="h2"
                   delay={0.2}
-                  className="mt-2 text-balance text-5xl md:text-6xl"
+                  className="mt-2 text-balance text-3xl md:text-6xl"
                 >
                   Your Intelligent R&D Assistant
                 </TextEffect>
@@ -126,7 +126,7 @@ export default function HeroSection() {
                   speedSegment={0.3}
                   delay={0.5}
                   as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+                  className="mx-auto mt-8 max-w-2xl text-balance text-md md:text-lg"
                 >
                   Use AI to streamline your CPG product reformulation. From
                   ingredient swaps to regulatory compliance.
@@ -196,7 +196,7 @@ export default function HeroSection() {
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                    src="/mail2.png"
+                    src="/dashboard-four.png"
                     alt="app screen"
                     width="2700"
                     height="1440"
