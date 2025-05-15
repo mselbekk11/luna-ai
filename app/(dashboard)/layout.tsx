@@ -16,6 +16,7 @@ import {
   SidebarTrigger,
   // SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { UserButton } from "@clerk/clerk-react";
 // import { Separator } from "@/components/ui/separator";
 
 type Props = {
@@ -40,6 +41,7 @@ export default function Page({ children }: Props) {
                 </BreadcrumbList>
               </Breadcrumb>
             </div>
+          <UserButton />
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4">{children}</div>
