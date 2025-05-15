@@ -4,6 +4,7 @@ import { useState } from "react";
 import OnboardingCard from "@/components/OnboardingCard";
 import { ContinueButton } from "@/components/continue-button";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 const primaryObjectives = [
   {
@@ -70,7 +71,9 @@ export default function OnboardingFive() {
   const [selectedSecondary, setSelectedSecondary] = useState<string[]>([]);
 
   const handlePrimarySelect = (primaryName: string) => {
-    setSelectedPrimary(primaryName);
+    // If the primary is already selected, deselect it (set to null)
+    // Otherwise, select it
+    setSelectedPrimary((prev) => (prev === primaryName ? null : primaryName));
   };
 
   const handleSecondarySelect = (secondaryName: string) => {
@@ -85,8 +88,27 @@ export default function OnboardingFive() {
     });
   };
 
+  const handleBeforeNext = () => {
+    if (!selectedPrimary && selectedSecondary.length === 0) {
+      toast.error("Please choose a primary and secondary objective");
+      return false;
+    }
+
+    if (!selectedPrimary) {
+      toast.error("Please choose a primary objective");
+      return false;
+    }
+
+    if (selectedSecondary.length === 0) {
+      toast.error("Please choose a secondary objective");
+      return false;
+    }
+
+    return true; // Allow navigation
+  };
+
   return (
-    <OnboardingCard step={5} totalSteps={7}>
+    <OnboardingCard step={5} totalSteps={7} onBeforeNext={handleBeforeNext}>
       <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}

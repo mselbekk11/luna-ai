@@ -12,6 +12,7 @@ import BreakfastFoods from "@/components/food-icons/breakfast-foods";
 import Dairy from "@/components/food-icons/dairy";
 import DogFood from "@/components/food-icons/dog-food";
 import Confectionairy from "@/components/food-icons/confectionary";
+import { toast } from "sonner";
 
 const categories = [
   {
@@ -55,8 +56,16 @@ export default function OnboardingTwo() {
     setSelectedCategory(categoryName);
   };
 
+  const handleBeforeNext = () => {
+    if (!selectedCategory) {
+      toast.error("Please choose a product category");
+      return false; // Prevent navigation
+    }
+    return true; // Allow navigation
+  };
+
   return (
-    <OnboardingCard step={2} totalSteps={7}>
+    <OnboardingCard step={2} totalSteps={7} onBeforeNext={handleBeforeNext}>
       <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}

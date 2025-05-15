@@ -7,8 +7,8 @@ interface OnboardingCardProps {
   children: React.ReactNode;
   step: number;
   totalSteps: number;
-  onBeforeNext?: () => void;
-  onBeforePrev?: () => void;
+  onBeforeNext?: () => boolean | void;
+  onBeforePrev?: () => boolean | void;
 }
 
 // Export a context for the navigation functions
@@ -32,14 +32,21 @@ export default function OnboardingCard({
 
   const handleNext = () => {
     if (onBeforeNext) {
-      onBeforeNext();
+      const shouldProceed = onBeforeNext();
+      // Only proceed if the function returns true or undefined (not explicitly false)
+      if (shouldProceed === false) {
+        return;
+      }
     }
     contextNextStep();
   };
 
   const handlePrev = () => {
     if (onBeforePrev) {
-      onBeforePrev();
+      const shouldProceed = onBeforePrev();
+      if (shouldProceed === false) {
+        return;
+      }
     }
     contextPrevStep();
   };

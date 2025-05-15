@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { ContinueButton } from "@/components/continue-button";
 import OnboardingCard from "@/components/OnboardingCard";
 import {
@@ -10,10 +11,27 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { motion } from "motion/react";
+import { toast } from "sonner";
 
 export default function OnboardingFour() {
+  const [selectedRegion, setSelectedRegion] = useState<string | undefined>(
+    undefined,
+  );
+
+  const handleRegionChange = (value: string) => {
+    setSelectedRegion(value);
+  };
+
+  const handleBeforeNext = () => {
+    if (!selectedRegion) {
+      toast.error("Please choose a region");
+      return false; // Prevent navigation
+    }
+    return true; // Allow navigation
+  };
+
   return (
-    <OnboardingCard step={4} totalSteps={7}>
+    <OnboardingCard step={4} totalSteps={7} onBeforeNext={handleBeforeNext}>
       <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -40,12 +58,12 @@ export default function OnboardingFour() {
             delay: 0.6,
           }}
         >
-          <Select>
+          <Select onValueChange={handleRegionChange} value={selectedRegion}>
             <SelectTrigger className="w-[300px]">
               <SelectValue placeholder="Choose a region" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="United States">North America</SelectItem>
+              <SelectItem value="North America">North America</SelectItem>
               <SelectItem value="South America">South America</SelectItem>
               <SelectItem value="Europe">Europe</SelectItem>
               <SelectItem value="Africa">Africa</SelectItem>

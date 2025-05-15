@@ -12,6 +12,7 @@ import Can from "@/components/food-icons/can";
 import Jar from "@/components/food-icons/jar";
 import Sachet from "@/components/food-icons/sachet";
 import Bag from "@/components/food-icons/bag";
+import { toast } from "sonner";
 
 const categories = [
   {
@@ -55,8 +56,16 @@ export default function OnboardingThree() {
     setSelectedCategory(categoryName);
   };
 
+  const handleBeforeNext = () => {
+    if (!selectedCategory) {
+      toast.error("Please choose a product format");
+      return false; // Prevent navigation
+    }
+    return true; // Allow navigation
+  };
+
   return (
-    <OnboardingCard step={3} totalSteps={7}>
+    <OnboardingCard step={3} totalSteps={7} onBeforeNext={handleBeforeNext}>
       <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}
