@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import OnboardingCard from "@/components/OnboardingCard";
 import { ContinueButton } from "@/components/continue-button";
 import { motion } from "motion/react";
@@ -48,6 +49,12 @@ const categories = [
 ];
 
 export default function OnboardingTwo() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const handleCategorySelect = (categoryName: string) => {
+    setSelectedCategory(categoryName);
+  };
+
   return (
     <OnboardingCard step={2} totalSteps={7}>
       <div className="flex flex-col items-center gap-8">
@@ -66,19 +73,54 @@ export default function OnboardingTwo() {
             This will help us personalize your experience
           </p>
         </motion.div>
-        <div className="grid grid-cols-4 gap-4">
-          {categories.map((category) => (
-            <div
-              key={category.name}
-              className="flex flex-col items-center gap-2 px-8 py-6 border border-[#33353B] rounded-sm"
-            >
-              <category.icon />
-              <p className="text-gray-400 text-sm font-semibold">{category.name}</p>
-            </div>
-          ))}
-        </div>
 
-        <ContinueButton />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.6,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <div className="grid grid-cols-4 gap-4">
+            {categories.map((category) => {
+              const isSelected = selectedCategory === category.name;
+              return (
+                <button
+                  key={category.name}
+                  className={`flex flex-col items-center gap-2 px-8 py-6 border rounded-sm transition-all
+                  ${
+                    isSelected
+                      ? "border-[#535FCC] bg-[#20233B]"
+                      : "border-[#33353B] hover:border-[#535FCC]"
+                  }`}
+                  onClick={() => handleCategorySelect(category.name)}
+                >
+                  <category.icon />
+                  <p
+                    className={`text-sm font-semibold ${isSelected ? "text-white" : "text-gray-400"}`}
+                  >
+                    {category.name}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.9,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <ContinueButton />
+        </motion.div>
       </div>
     </OnboardingCard>
   );

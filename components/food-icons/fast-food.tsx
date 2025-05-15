@@ -7,7 +7,7 @@ export default function FastFood() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_10_1039)">
+      <g clipPath="url(#clip0_10_1039)">
         <path
           d="M8.09523 2.232H12.1735V6.73032H14.4076V0.620039C14.4076 0.279018 14.1284 0 13.787 0H8.09523C7.75384 0 7.47461 0.279018 7.47461 0.620039V1.61203C7.47461 1.95291 7.75384 2.232 8.09523 2.232Z"
           fill="#E6E9ED"

@@ -7,7 +7,7 @@ export default function BakedGoods() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_10_1225)">
+      <g clipPath="url(#clip0_10_1225)">
         <path
           d="M21.6032 22.0688H15.2158L13.4568 24.0806L14.8268 35.427L16.3332 37H20.593L22.3754 36.2343L23.6088 25.7667L21.6032 22.0688Z"
           fill="#A6E7F0"

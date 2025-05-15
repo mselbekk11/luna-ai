@@ -7,7 +7,7 @@ export default function Snacks() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_10_940)">
+      <g clipPath="url(#clip0_10_940)">
         <path
           d="M29.687 33.1506L30.8057 37.0001C30.8914 37.0001 30.9771 36.9804 31.0558 36.941L31.9244 36.5067L32.7929 36.941C32.908 36.9982 33.0431 36.9144 33.0431 36.7859V34.2693L29.687 33.1506Z"
           fill="#A93455"

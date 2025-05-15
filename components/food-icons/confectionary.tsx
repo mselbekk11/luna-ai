@@ -7,7 +7,7 @@ export default function Confectionairy() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_10_961)">
+      <g clipPath="url(#clip0_10_961)">
         <path
           d="M22.1934 5.49733L27.2118 0.482287C27.7871 -0.0927285 28.72 -0.0927285 29.2953 0.482287L35.5683 6.75114C36.1437 7.32615 36.1437 8.25836 35.5683 8.83337L30.5544 13.8439L22.1934 5.49733Z"
           fill="#AE6C6C"
