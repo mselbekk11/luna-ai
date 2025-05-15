@@ -6,6 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import ConvexClerkUserSync from "@/components/ConvexClerkUserSync";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { dark } from "@clerk/themes";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +53,7 @@ export default function RootLayout({
             <ConvexClientProvider>
               <ConvexClerkUserSync />
               {children}
+              <Toaster position="bottom-center" theme="dark" />
             </ConvexClientProvider>
           </ClerkProvider>
         </ThemeProvider>
