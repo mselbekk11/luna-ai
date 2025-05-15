@@ -126,67 +126,79 @@ export default function OnboardingSix() {
             This will help our AI make decisions
           </p>
         </motion.div>
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center min-w-[650px] gap-2">
-            <Input
-              placeholder="Type an ingredient and press Enter"
-              value={inputValue}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              className="flex-1"
-            />
-            <Button onClick={handleAddClick} size="icon">
-              <Plus className="h-4 w-4" />
-              <span className="sr-only">Add ingredient</span>
-            </Button>
-          </div>
 
-          <div className="flex items-center justify-between">
-            <div className="text-sm text-muted-foreground">
-              {ingredients.length}{" "}
-              {ingredients.length === 1 ? "ingredient" : "ingredients"} added
-            </div>
-            <div className="flex items-center space-x-2">
-              <input
-                type="file"
-                accept=".csv"
-                onChange={handleFileUpload}
-                ref={fileInputRef}
-                className="hidden"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.6,
+          }}
+        >
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center min-w-[650px] gap-2">
+              <Input
+                placeholder="Type an ingredient and press Enter"
+                value={inputValue}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                className="flex-1"
               />
-              <Button variant="outline" onClick={triggerFileUpload}>
-                <Upload className="h-4 w-4 mr-2" />
-                Upload CSV
+              <Button onClick={handleAddClick} size="icon">
+                <Plus className="h-4 w-4" />
+                <span className="sr-only">Add ingredient</span>
               </Button>
             </div>
-          </div>
 
-          <div className="border rounded-md p-4 min-w-[650px] max-w-[650px]">
-            <div className="text-sm font-medium mb-2">Your ingredients:</div>
-            <div className="max-h-[80px] min-h-[80px] overflow-y-auto pr-2">
-              {ingredients.length > 0 && (
-                <div className="flex flex-wrap gap-2 content-start">
-                  {ingredients.map((ingredient, index) => (
-                    <Badge
-                      key={index}
-                      variant="secondary"
-                      className="flex items-center gap-1 px-3 py-1.5 whitespace-nowrap h-8"
-                    >
-                      {ingredient}
-                      <button
-                        onClick={() => removeIngredient(index)}
-                        className="ml-1 rounded-full hover:bg-muted p-0.5"
-                        aria-label={`Remove ${ingredient}`}
+            <div className="flex items-center justify-between">
+              <div className="text-sm text-muted-foreground">
+                {ingredients.length}{" "}
+                {ingredients.length === 1 ? "ingredient" : "ingredients"} added
+              </div>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="file"
+                  accept=".csv"
+                  onChange={handleFileUpload}
+                  ref={fileInputRef}
+                  className="hidden"
+                />
+                <Button variant="outline" onClick={triggerFileUpload}>
+                  <Upload className="h-4 w-4 mr-2" />
+                  Upload CSV
+                </Button>
+              </div>
+            </div>
+
+            <div className="border rounded-md p-4 min-w-[650px] max-w-[650px]">
+              <div className="text-sm font-medium mb-2">Your ingredients:</div>
+              <div className="max-h-[80px] min-h-[80px] overflow-y-auto pr-2">
+                {ingredients.length > 0 && (
+                  <div className="flex flex-wrap gap-2 content-start">
+                    {ingredients.map((ingredient, index) => (
+                      <Badge
+                        key={index}
+                        variant="secondary"
+                        className="flex items-center gap-1 px-3 py-1.5 whitespace-nowrap h-8"
                       >
-                        <X className="h-3 w-3" />
-                      </button>
-                    </Badge>
-                  ))}
-                </div>
-              )}
+                        {ingredient}
+                        <button
+                          onClick={() => removeIngredient(index)}
+                          className="ml-1 rounded-full hover:bg-muted p-0.5"
+                          aria-label={`Remove ${ingredient}`}
+                        >
+                          <X className="h-3 w-3" />
+                        </button>
+                      </Badge>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -195,7 +207,6 @@ export default function OnboardingSix() {
             ease: "easeIn",
             delay: 1.2,
           }}
-          className="flex flex-col items-center gap-2"
         >
           <ContinueButton />
         </motion.div>
