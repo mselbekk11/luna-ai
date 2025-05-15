@@ -1,35 +1,126 @@
 "use client";
 
+import { useState } from "react";
 import OnboardingCard from "@/components/OnboardingCard";
 import { ContinueButton } from "@/components/continue-button";
+import { motion } from "motion/react";
+import Snacks from "@/components/food-icons/snacks";
+import FastFood from "@/components/food-icons/fast-food";
+import Beverages from "@/components/food-icons/beverages";
+import BakedGoods from "@/components/food-icons/baked-goods";
+import BreakfastFoods from "@/components/food-icons/breakfast-foods";
+import Dairy from "@/components/food-icons/dairy";
+import DogFood from "@/components/food-icons/dog-food";
+import Confectionairy from "@/components/food-icons/confectionary";
+
+const categories = [
+  {
+    name: "Snacks",
+    icon: Snacks,
+  },
+  {
+    name: "Fast Food",
+    icon: FastFood,
+  },
+  {
+    name: "Beverages",
+    icon: Beverages,
+  },
+  {
+    name: "Baked Goods",
+    icon: BakedGoods,
+  },
+  {
+    name: "BreakFast Food",
+    icon: BreakfastFoods,
+  },
+  {
+    name: "Dairy",
+    icon: Dairy,
+  },
+  {
+    name: "Pet Food",
+    icon: DogFood,
+  },
+  {
+    name: "Confectionary",
+    icon: Confectionairy,
+  },
+];
 
 export default function OnboardingThree() {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const handleCategorySelect = (categoryName: string) => {
+    setSelectedCategory(categoryName);
+  };
+
   return (
     <OnboardingCard step={3} totalSteps={7}>
-      <h2 className="text-2xl font-bold">Preferences</h2>
-      <p className="text-gray-600">
-        Choose your preferences to customize your experience.
-      </p>
-      <div className="mt-4 space-y-4">
-        {/* Preferences options would go here */}
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">
-            Theme
-          </label>
-          <div className="flex space-x-4">
-            <button className="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300 transition">
-              Light
-            </button>
-            <button className="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition">
-              Dark
-            </button>
-          </div>
-        </div>
-      </div>
+      <div className="flex flex-col items-center gap-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.3,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <h2 className="text-3xl font-bold">Choose a product category</h2>
+          <p className="text-gray-400 text-lg">
+            This will help us personalize your experience
+          </p>
+        </motion.div>
 
-      {/* Fixed at the bottom */}
-      <div className="absolute bottom-20 left-0 right-0">
-        <ContinueButton buttonClassName="px-10 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:from-blue-600 hover:to-purple-700 transition shadow-md" />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.6,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <div className="grid grid-cols-4 gap-4">
+            {categories.map((category) => {
+              const isSelected = selectedCategory === category.name;
+              return (
+                <button
+                  key={category.name}
+                  className={`flex flex-col items-center gap-2 px-8 py-6 border rounded-sm transition-all
+                  ${
+                    isSelected
+                      ? "border-[#535FCC] bg-[#20233B]"
+                      : "border-[#33353B] hover:border-[#535FCC]"
+                  }`}
+                  onClick={() => handleCategorySelect(category.name)}
+                >
+                  <category.icon />
+                  <p
+                    className={`text-sm font-semibold ${isSelected ? "text-white" : "text-gray-400"}`}
+                  >
+                    {category.name}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1.2,
+            ease: "easeIn",
+            delay: 0.9,
+          }}
+          className="flex flex-col items-center gap-2"
+        >
+          <ContinueButton />
+        </motion.div>
       </div>
     </OnboardingCard>
   );
