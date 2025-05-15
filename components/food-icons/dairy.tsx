@@ -1,8 +1,8 @@
 export default function Dairy() {
   return (
     <svg
-      width="41"
-      height="41"
+      width="37"
+      height="37"
       viewBox="0 0 41 41"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

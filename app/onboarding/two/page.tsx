@@ -57,7 +57,7 @@ export default function OnboardingTwo() {
 
   return (
     <OnboardingCard step={2} totalSteps={7}>
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -84,7 +84,7 @@ export default function OnboardingTwo() {
           }}
           className="flex flex-col items-center gap-2"
         >
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 min-w-[750px]">
             {categories.map((category) => {
               const isSelected = selectedCategory === category.name;
               return (

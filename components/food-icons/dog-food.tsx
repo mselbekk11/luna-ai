@@ -1,7 +1,7 @@
 export default function DogFood() {
   return (
     <svg
-      width="57"
+      width="47"
       height="37"
       viewBox="0 0 67 37"
       fill="none"

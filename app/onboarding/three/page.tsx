@@ -4,47 +4,47 @@ import { useState } from "react";
 import OnboardingCard from "@/components/OnboardingCard";
 import { ContinueButton } from "@/components/continue-button";
 import { motion } from "motion/react";
-import Snacks from "@/components/food-icons/snacks";
-import FastFood from "@/components/food-icons/fast-food";
-import Beverages from "@/components/food-icons/beverages";
-import BakedGoods from "@/components/food-icons/baked-goods";
-import BreakfastFoods from "@/components/food-icons/breakfast-foods";
-import Dairy from "@/components/food-icons/dairy";
-import DogFood from "@/components/food-icons/dog-food";
-import Confectionairy from "@/components/food-icons/confectionary";
+import Liquid from "@/components/food-icons/liquid";
+import Powder from "@/components/food-icons/powder";
+import Bar from "@/components/food-icons/bar";
+import Bottle from "@/components/food-icons/bottle";
+import Can from "@/components/food-icons/can";
+import Jar from "@/components/food-icons/jar";
+import Sachet from "@/components/food-icons/sachet";
+import Bag from "@/components/food-icons/bag";
 
 const categories = [
   {
-    name: "Snacks",
-    icon: Snacks,
+    name: "Liquid",
+    icon: Liquid,
   },
   {
-    name: "Fast Food",
-    icon: FastFood,
+    name: "Powder",
+    icon: Powder,
   },
   {
-    name: "Beverages",
-    icon: Beverages,
+    name: "Bar",
+    icon: Bar,
   },
   {
-    name: "Baked Goods",
-    icon: BakedGoods,
+    name: "Bottle",
+    icon: Bottle,
   },
   {
-    name: "BreakFast Food",
-    icon: BreakfastFoods,
+    name: "Can",
+    icon: Can,
   },
   {
-    name: "Dairy",
-    icon: Dairy,
+    name: "Jar",
+    icon: Jar,
   },
   {
-    name: "Pet Food",
-    icon: DogFood,
+    name: "Sachet",
+    icon: Sachet,
   },
   {
-    name: "Confectionary",
-    icon: Confectionairy,
+    name: "Bag",
+    icon: Bag,
   },
 ];
 
@@ -57,7 +57,7 @@ export default function OnboardingThree() {
 
   return (
     <OnboardingCard step={3} totalSteps={7}>
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -68,7 +68,7 @@ export default function OnboardingThree() {
           }}
           className="flex flex-col items-center gap-2"
         >
-          <h2 className="text-3xl font-bold">Choose a product category</h2>
+          <h2 className="text-3xl font-bold">Choose a product format</h2>
           <p className="text-gray-400 text-lg">
             This will help us personalize your experience
           </p>
@@ -84,7 +84,7 @@ export default function OnboardingThree() {
           }}
           className="flex flex-col items-center gap-2"
         >
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-4 min-w-[750px]">
             {categories.map((category) => {
               const isSelected = selectedCategory === category.name;
               return (
