@@ -108,8 +108,16 @@ export default function OnboardingSix() {
     fileInputRef.current?.click();
   };
 
+  const handleBeforeNext = () => {
+    if (ingredients.length === 0) {
+      toast.error("Please add at least one ingredient");
+      return false; // Prevent navigation
+    }
+    return true; // Allow navigation
+  };
+
   return (
-    <OnboardingCard step={6} totalSteps={7}>
+    <OnboardingCard step={6} totalSteps={7} onBeforeNext={handleBeforeNext}>
       <div className="flex flex-col items-center gap-10">
         <motion.div
           initial={{ opacity: 0 }}
