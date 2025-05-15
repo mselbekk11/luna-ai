@@ -4,8 +4,17 @@ import { LogoOnboarding } from "@/components/logo-onboarding";
 import OnboardingCard from "@/components/OnboardingCard";
 import { ContinueButton } from "@/components/continue-button";
 import { motion } from "motion/react";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { useUser } from "@clerk/nextjs";
 
 export default function OnboardingOne() {
+  const { user: clerkUser } = useUser();
+  const user = useQuery(
+    api.users.getUser,
+    clerkUser?.id ? { tokenIdentifier: clerkUser.id } : "skip",
+  );
+
   return (
     <OnboardingCard step={1} totalSteps={7}>
       <div className="flex flex-col items-center gap-8">
@@ -29,6 +38,11 @@ export default function OnboardingOne() {
           }}
           className="flex flex-col items-center gap-2"
         >
+          <div className="h-6 flex items-center justify-center">
+            {user?.name && (
+              <h3 className="text-lg text-gray-300">Hi {user.name}</h3>
+            )}
+          </div>
           <h2 className="text-3xl font-bold">Welcome to Luna AI</h2>
           <p className="text-gray-400 text-lg">
             Lets get you set up with your first product
