@@ -46,12 +46,12 @@ export default function OnboardingFour() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="United States">North America</SelectItem>
-              <SelectItem value="United States">South America</SelectItem>
-              <SelectItem value="European Union">Europe</SelectItem>
-              <SelectItem value="South Africa">Africa</SelectItem>
-              <SelectItem value="South Africa">Antarctica</SelectItem>
-              <SelectItem value="India">Asia</SelectItem>
-              <SelectItem value="China">Oceania</SelectItem>
+              <SelectItem value="South America">South America</SelectItem>
+              <SelectItem value="Europe">Europe</SelectItem>
+              <SelectItem value="Africa">Africa</SelectItem>
+              <SelectItem value="Antarctica">Antarctica</SelectItem>
+              <SelectItem value="Asia">Asia</SelectItem>
+              <SelectItem value="Oceania">Oceania</SelectItem>
               <SelectItem value="Global Distribution">
                 Global Distribution
               </SelectItem>

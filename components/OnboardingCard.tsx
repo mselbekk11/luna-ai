@@ -56,7 +56,7 @@ export default function OnboardingCard({
         totalSteps,
       }}
     >
-      <div className="bg-[#0D0D0E] rounded-lg shadow-md p-6 w-full max-w-4xl relative border border-[#383A42] min-h-[600px] flex flex-col">
+      <div className="bg-[#0D0D0E] rounded-lg shadow-md p-6 w-full max-w-4xl relative border border-[#383A42] min-h-[650px] flex flex-col">
         {/* Back button in the top left */}
         {step > 1 && (
           <button
