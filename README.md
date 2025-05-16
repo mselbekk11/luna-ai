@@ -15,7 +15,7 @@ The challenge was to redesign this onboarding into an intuitive, fast, and motiv
 
 ## 🎯 How I interpreted the problem
 
-The 4 paint points all pointed towards a bad user experience, from the moment they signed up to their initial experience of the dashboard. Logging into a new tool can sometimes be overwhelming with buttons, options, multiple side bars etc… especially for non technical users, so I decided to build out an onboarding sequence, which addresses most of the pain points, doesn’t give the end user too many initial options and also gets them to build out something useful so they immediately use the product and can get familiar with it.
+The 4 paint points all pointed towards a bad user experience from the moment they signed up to their initial experience of the dashboard. Logging into a new tool can sometimes be overwhelming with buttons, options, multiple side bars etc… especially for non technical users, so I decided to build out an onboarding sequence, which addresses most of the pain points, doesn’t give the end user too many initial options and also gets them to build out something useful so they immediately use the product and can get familiar with it.
 
 ---
 
@@ -50,6 +50,6 @@ This was the most important to address first because if the end user doesnt even
 ## 🔍 Bonus: UX Issue the Original Team Likely Missed
 
 **No Reinforcement of Progress or Momentum.**  
-The original flow likely failed to build a sense of momentum. Users had no feedback on how far they’d progressed or what was coming next. I introduced a visual stepper and micro-rewards (toasts, summaries) to make users feel like they were making meaningful progress through a complex task.
+The original flow likely failed to build a sense of momentum. Users had no feedback on how far they’d progressed or what was coming next. I introduced a visual stepper to make users feel like they were making meaningful progress and could also see how much was left.
 
 ---
