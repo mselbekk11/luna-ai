@@ -80,7 +80,10 @@ export default function HeroSection() {
             <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                <AnimatedGroup variants={transitionVariants}>
+                <AnimatedGroup
+                  variants={transitionVariants}
+                  className="hidden md:block"
+                >
                   <Link
                     href="/sign-in"
                     className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
@@ -126,7 +129,7 @@ export default function HeroSection() {
                   speedSegment={0.3}
                   delay={0.5}
                   as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-md md:text-lg"
+                  className="mx-auto mt-8 max-w-2xl text-balance text-xs md:text-lg"
                 >
                   Use AI to streamline your CPG product reformulation. From
                   ingredient swaps to regulatory compliance.
