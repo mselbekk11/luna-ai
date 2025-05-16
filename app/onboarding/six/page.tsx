@@ -129,10 +129,10 @@ export default function OnboardingSix() {
           }}
           className="flex flex-col items-center gap-2 text-center"
         >
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <h2 className="text-lg md:text-3xl font-bold">
             Enter Key Ingredients
           </h2>
-          <p className="text-gray-400 text-base md:text-lg">
+          <p className="text-gray-400 text-sm md:text-lg">
             This will help our AI make decisions
           </p>
         </motion.div>
@@ -147,14 +147,14 @@ export default function OnboardingSix() {
           }}
           className="w-full"
         >
-          <div className="flex flex-col gap-3 md:gap-4 w-full">
+          <div className="flex flex-col gap-6 md:gap-6 w-full">
             <div className="flex items-center w-full gap-2">
               <Input
                 placeholder="Type an ingredient and press Enter"
                 value={inputValue}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
-                className="flex-1"
+                className="flex-1 text-sm md:text-base"
               />
               <Button onClick={handleAddClick} size="icon">
                 <Plus className="h-4 w-4" />
@@ -186,7 +186,7 @@ export default function OnboardingSix() {
               </div>
             </div>
 
-            <div className="border rounded-md p-2 md:p-4 w-full max-w-full md:max-w-[650px]">
+            <div className="border rounded-md p-2 md:p-4 w-full max-w-full md:max-w-[750px]">
               <div className="text-xs md:text-sm font-medium mb-2">
                 Your ingredients:
               </div>

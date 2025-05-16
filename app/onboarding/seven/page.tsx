@@ -30,8 +30,8 @@ export default function OnboardingSeven() {
           }}
           className="flex flex-col items-center gap-2 text-center"
         >
-          <h2 className="text-2xl md:text-3xl font-bold">You are all set!</h2>
-          <p className="text-gray-400 text-base md:text-lg">
+          <h2 className="text-lg md:text-3xl font-bold">You are all set!</h2>
+          <p className="text-gray-400 text-sm md:text-lg">
             Go ahead and explore the Luna AI app
           </p>
         </motion.div>

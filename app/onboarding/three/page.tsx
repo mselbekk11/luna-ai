@@ -77,10 +77,10 @@ export default function OnboardingThree() {
           }}
           className="flex flex-col items-center gap-2 text-center"
         >
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <h2 className="text-lg md:text-3xl font-bold">
             Choose a product format
           </h2>
-          <p className="text-gray-400 text-base md:text-lg">
+          <p className="text-gray-400 text-sm md:text-lg">
             This will help us personalize your experience
           </p>
         </motion.div>
