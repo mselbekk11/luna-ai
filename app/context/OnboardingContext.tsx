@@ -3,10 +3,13 @@
 import React, { createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 
+// Define a more specific type for onboarding data
+type OnboardingDataType = Record<string, unknown>;
+
 interface OnboardingContextType {
   currentStep: number;
-  onboardingData: Record<string, any>;
-  updateData: (data: Record<string, any>) => void;
+  onboardingData: OnboardingDataType;
+  updateData: (data: OnboardingDataType) => void;
   nextStep: () => void;
   prevStep: () => void;
   goToStep: (step: number) => void;
@@ -24,10 +27,10 @@ export function OnboardingProvider({
   children: React.ReactNode;
 }) {
   const [currentStep, setCurrentStep] = useState(1);
-  const [onboardingData, setOnboardingData] = useState<Record<string, any>>({});
+  const [onboardingData, setOnboardingData] = useState<OnboardingDataType>({});
   const router = useRouter();
 
-  const updateData = (data: Record<string, any>) => {
+  const updateData = (data: OnboardingDataType) => {
     setOnboardingData((prev) => ({ ...prev, ...data }));
   };
 
