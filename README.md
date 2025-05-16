@@ -1,51 +1,55 @@
-# Welcome to your Convex + Next.js + Clerk app
+# “UX Rescue” — Build a Better Onboarding for a Broken App
 
-This is a [Convex](https://convex.dev/) project created with [`npm create convex`](https://www.npmjs.com/package/create-convex).
+## 🧠 Problem Overview
 
-After the initial setup (<2 minutes) you'll have a working full-stack app using:
+The original onboarding experience suffered from several critical experience problems:
 
-- Convex as your backend (database, server logic)
-- [React](https://react.dev/) as your frontend (web page interactivity)
-- [Next.js](https://nextjs.org/) for optimized web hosting and page routing
-- [Tailwind](https://tailwindcss.com/) for building great looking accessible UI
-- [Clerk](https://clerk.com/) for authentication
+- Users felt **confused after sign-up**, with no clear next step.
+- **Forms disappeared without confirmation**, leaving users unsure of what was submitted.
+- **Lack of visual feedback or state transitions** made the UI feel broken or unresponsive.
+- There was **no guidance, motivation, or orientation** during the flow.
 
-## Get started
+The challenge was to redesign this onboarding into an intuitive, fast, and motivating experience — especially for non-technical users working in complex domains like CPG product reformulation.
 
-If you just cloned this codebase and didn't use `npm create convex`, run:
+---
 
-```
-npm install
-npm run dev
-```
+## 🎯 How I interpreted the problem
 
-If you're reading this README on GitHub and want to use this template, run:
+The 4 paint points all pointed towards a bad user experience, from the moment they signed up to their initial experience of the dashboard. Logging into a new tool can sometimes be overwhelming with buttons, options, multiple side bars etc… especially for non technical users, so I decided to build out an onboarding sequence, which addresses most of the pain points, doesn’t give the end user too many initial options and also gets them to build out something useful so they immediately use the product and can get familiar with it.
 
-```
-npm create convex@latest -- -t nextjs-clerk
-```
+---
 
-Then:
+## 🧩 What experience problems you focused on first and why.
 
-1. Open your app. There should be a "Claim your application" button from Clerk in the bottom right of your app.
-2. Follow the steps to claim your application and link it to this app.
-3. Follow step 3 in the [Convex Clerk onboarding guide](https://docs.convex.dev/auth/clerk#get-started) to create a Convex JWT template.
-4. Uncomment the Clerk provider in `convex/auth.config.ts`
-5. Paste the Issuer URL as `CLERK_JWT_ISSUER_DOMAIN` to your dev deployment environment variable settings on the Convex dashboard (see [docs](https://docs.convex.dev/auth/clerk#configuring-dev-and-prod-instances))
+The first experience problem:
 
-If you want to sync Clerk user data via webhooks, check out this [example repo](https://github.com/thomasballinger/convex-clerk-users-table/).
+- “I didn’t know what to do after signing up.”
 
-## Learn more
+This was the most important to address first because if the end user doesnt even know what to do once signing up then the other three experience problems do not matter as much. It highligted to me that I wanted to build a trendy onboarding sequence which guided the end user on a simple journey, that immediately gave them confidence and even enjoyment using the product whislt also gaining their trust.
 
-To learn more about developing your project with Convex, check out:
+---
 
-- The [Tour of Convex](https://docs.convex.dev/get-started) for a thorough introduction to Convex principles.
-- The rest of [Convex docs](https://docs.convex.dev/) to learn about all Convex features.
-- [Stack](https://stack.convex.dev/) for in-depth articles on advanced topics.
+## ⏱️ Time Constraints & Trade-Offs
 
-## Join the community
+- I decided not to keep track of the users choices in the onboarding sequence
+- I decided to keep the dashboard extremely simple, and really put a lot of the effort into the initial onboarding sequence.
+- only one journey apposed to multiple depending on the end users choices
 
-Join thousands of developers building full-stack apps with Convex:
+---
 
-- Join the [Convex Discord community](https://convex.dev/community) to get help in real-time.
-- Follow [Convex on GitHub](https://github.com/get-convex/), star and contribute to the open-source implementation of Convex.
+## 🚀 If Given More Time (v2 Ideas)
+
+- Store the users choices in a database and then display the data in the dahsboard.
+- Got access to the actual software and emulated the real Luna AI Branding
+- Multiple Journeys for the end users depending on their choices
+- Added Stripe subscriptions
+- Integrate AI into the dashboard
+
+---
+
+## 🔍 Bonus: UX Issue the Original Team Likely Missed
+
+**No Reinforcement of Progress or Momentum.**  
+The original flow likely failed to build a sense of momentum. Users had no feedback on how far they’d progressed or what was coming next. I introduced a visual stepper and micro-rewards (toasts, summaries) to make users feel like they were making meaningful progress through a complex task.
+
+---

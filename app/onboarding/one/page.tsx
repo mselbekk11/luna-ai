@@ -47,7 +47,7 @@ export default function OnboardingOne() {
           </div>
           <h2 className="text-lg md:text-3xl font-bold">Welcome to Luna AI</h2>
           <p className="text-gray-400 text-sm md:text-lg">
-            Lets get you set up with your first product
+            Let&apos;s get you set up with your first product
           </p>
         </motion.div>
         <motion.div
