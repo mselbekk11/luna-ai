@@ -63,7 +63,7 @@ export default function OnboardingCard({
         totalSteps,
       }}
     >
-      <div className="rounded-lg shadow-md p-6 w-full max-w-4xl relative border border-[#383A42] h-screen md:h-auto md:min-h-[650px] flex flex-col overflow-hidden bg-[#0D0D0E] backdrop-blur-sm">
+      <div className="rounded-lg shadow-md p-4 md:p-6 w-full max-w-4xl relative border border-[#383A42] h-[calc(100vh-2rem)] md:h-auto md:min-h-[650px] flex flex-col overflow-hidden bg-[#0D0D0E] backdrop-blur-sm">
         <div
           aria-hidden
           className="absolute inset-0 isolate opacity-45 contain-strict z-0"
@@ -82,12 +82,12 @@ export default function OnboardingCard({
           </button>
         )}
 
-        <div className="space-y-4 flex-grow flex flex-col justify-center z-1 relative">
+        <div className="space-y-4 flex-grow flex flex-col justify-center z-1 relative w-full max-w-3xl mx-auto px-2 md:px-4">
           {children}
         </div>
 
         {/* Step indicators as circles in a row - fixed at bottom */}
-        <div className="flex justify-center space-x-3 absolute bottom-8 left-0 right-0 z-1">
+        <div className="flex justify-center space-x-3 pb-4 mt-auto z-1">
           {Array.from({ length: totalSteps }, (_, i) => (
             <div
               key={i}

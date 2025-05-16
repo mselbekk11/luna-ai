@@ -109,7 +109,7 @@ export default function OnboardingFive() {
 
   return (
     <OnboardingCard step={5} totalSteps={7} onBeforeNext={handleBeforeNext}>
-      <div className="flex flex-col items-center gap-6 md:gap-10 px-4 md:px-0">
+      <div className="flex flex-col items-center gap-6 md:gap-10 w-full mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -118,7 +118,7 @@ export default function OnboardingFive() {
             ease: "easeIn",
             delay: 0.3,
           }}
-          className="flex flex-col items-center gap-2 text-center"
+          className="flex flex-col items-center gap-2 text-center w-full"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-center">
             Define Formulation Objectives
@@ -147,7 +147,7 @@ export default function OnboardingFive() {
                 Choose 1 option
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4 w-full max-w-[750px]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4 w-full">
               {primaryObjectives.map((primary) => {
                 const isSelected = selectedPrimary === primary.name;
                 return (
@@ -192,7 +192,7 @@ export default function OnboardingFive() {
                 Choose multiple
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 w-full max-w-[750px]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 w-full">
               {secondaryObjectives.map((secondary) => {
                 const isSelected = selectedSecondary.includes(secondary.name);
                 return (
