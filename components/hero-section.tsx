@@ -107,7 +107,7 @@ export default function HeroSection() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mt-8 text-balance text-3xl md:text-6xl lg:mt-16"
+                  className="mt-8 text-balance text-3xl md:text-6xl lg:mt-16 animate"
                 >
                   Meet Luna AI
                 </TextEffect>
@@ -196,7 +196,7 @@ export default function HeroSection() {
                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                   <Image
                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                    src="/dashboard-four.png"
+                    src="/bg-3.png"
                     alt="app screen"
                     width="2700"
                     height="1440"
