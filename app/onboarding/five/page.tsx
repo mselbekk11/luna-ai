@@ -109,7 +109,7 @@ export default function OnboardingFive() {
 
   return (
     <OnboardingCard step={5} totalSteps={7} onBeforeNext={handleBeforeNext}>
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-6 md:gap-10 px-4 md:px-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -118,10 +118,14 @@ export default function OnboardingFive() {
             ease: "easeIn",
             delay: 0.3,
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-2 text-center"
         >
-          <h2 className="text-3xl font-bold">Define Formulation Objectives</h2>
-          <p className="text-gray-400 text-lg">This can be changed later</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center">
+            Define Formulation Objectives
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg">
+            This can be changed later
+          </p>
         </motion.div>
 
         <motion.div
@@ -132,20 +136,24 @@ export default function OnboardingFive() {
             ease: "easeIn",
             delay: 0.6,
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-2 w-full"
         >
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-between">
-              <p className="text-sm font-semibold">Primary Objective </p>
-              <p className="text-gray-600 text-sm">Choose 1 option</p>
+          <div className="flex flex-col gap-3 md:gap-4 w-full">
+            <div className="flex justify-between w-full">
+              <p className="text-xs md:text-sm font-semibold">
+                Primary Objective{" "}
+              </p>
+              <p className="text-gray-600 text-xs md:text-sm">
+                Choose 1 option
+              </p>
             </div>
-            <div className="grid grid-cols-4 gap-4 min-w-[750px]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4 w-full max-w-[750px]">
               {primaryObjectives.map((primary) => {
                 const isSelected = selectedPrimary === primary.name;
                 return (
                   <button
                     key={primary.name}
-                    className={`flex flex-col items-center gap-2 py-2 border rounded-sm transition-all
+                    className={`flex flex-col items-center gap-1 md:gap-2 py-2 border rounded-sm transition-all
                   ${
                     isSelected
                       ? "border-[#535FCC] bg-[#20233B]"
@@ -154,7 +162,7 @@ export default function OnboardingFive() {
                     onClick={() => handlePrimarySelect(primary.name)}
                   >
                     <p
-                      className={`text-xs font-semibold ${isSelected ? "text-white" : "text-gray-400"}`}
+                      className={`text-xs font-semibold px-1 ${isSelected ? "text-white" : "text-gray-400"}`}
                     >
                       {primary.name}
                     </p>
@@ -173,20 +181,24 @@ export default function OnboardingFive() {
             ease: "easeIn",
             delay: 0.9,
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-2 w-full"
         >
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-between">
-              <p className="text-sm font-semibold">Secondary Objectives</p>
-              <p className="text-gray-600 text-sm">Choose multiple</p>
+          <div className="flex flex-col gap-3 md:gap-4 w-full">
+            <div className="flex justify-between w-full">
+              <p className="text-xs md:text-sm font-semibold">
+                Secondary Objectives
+              </p>
+              <p className="text-gray-600 text-xs md:text-sm">
+                Choose multiple
+              </p>
             </div>
-            <div className="grid grid-cols-5 gap-4 min-w-[750px]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 w-full max-w-[750px]">
               {secondaryObjectives.map((secondary) => {
                 const isSelected = selectedSecondary.includes(secondary.name);
                 return (
                   <button
                     key={secondary.name}
-                    className={`flex flex-col items-center gap-2 py-2 border rounded-sm transition-all
+                    className={`flex flex-col items-center gap-1 md:gap-2 py-2 border rounded-sm transition-all
                   ${
                     isSelected
                       ? "border-[#535FCC] bg-[#20233B]"
@@ -195,7 +207,7 @@ export default function OnboardingFive() {
                     onClick={() => handleSecondarySelect(secondary.name)}
                   >
                     <p
-                      className={`text-xs font-semibold ${isSelected ? "text-white" : "text-gray-400"}`}
+                      className={`text-xs font-semibold px-1 ${isSelected ? "text-white" : "text-gray-400"}`}
                     >
                       {secondary.name}
                     </p>

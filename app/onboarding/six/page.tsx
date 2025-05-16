@@ -118,7 +118,7 @@ export default function OnboardingSix() {
 
   return (
     <OnboardingCard step={6} totalSteps={7} onBeforeNext={handleBeforeNext}>
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-6 md:gap-10 px-4 md:px-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -127,10 +127,12 @@ export default function OnboardingSix() {
             ease: "easeIn",
             delay: 0.3,
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-2 text-center"
         >
-          <h2 className="text-3xl font-bold">Enter Key Ingredients</h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Enter Key Ingredients
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg">
             This will help our AI make decisions
           </p>
         </motion.div>
@@ -143,9 +145,10 @@ export default function OnboardingSix() {
             ease: "easeIn",
             delay: 0.6,
           }}
+          className="w-full"
         >
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center min-w-[650px] gap-2">
+          <div className="flex flex-col gap-3 md:gap-4 w-full">
+            <div className="flex items-center w-full gap-2">
               <Input
                 placeholder="Type an ingredient and press Enter"
                 value={inputValue}
@@ -159,12 +162,12 @@ export default function OnboardingSix() {
               </Button>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="text-sm text-muted-foreground">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 {ingredients.length}{" "}
                 {ingredients.length === 1 ? "ingredient" : "ingredients"} added
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center">
                 <input
                   type="file"
                   accept=".csv"
@@ -172,23 +175,29 @@ export default function OnboardingSix() {
                   ref={fileInputRef}
                   className="hidden"
                 />
-                <Button variant="outline" onClick={triggerFileUpload}>
-                  <Upload className="h-4 w-4 mr-2" />
+                <Button
+                  variant="outline"
+                  onClick={triggerFileUpload}
+                  className="text-xs sm:text-sm w-full sm:w-auto"
+                >
+                  <Upload className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
                   Upload CSV
                 </Button>
               </div>
             </div>
 
-            <div className="border rounded-md p-4 min-w-[650px] max-w-[650px]">
-              <div className="text-sm font-medium mb-2">Your ingredients:</div>
+            <div className="border rounded-md p-2 md:p-4 w-full max-w-full md:max-w-[650px]">
+              <div className="text-xs md:text-sm font-medium mb-2">
+                Your ingredients:
+              </div>
               <div className="max-h-[80px] min-h-[80px] overflow-y-auto pr-2">
                 {ingredients.length > 0 && (
-                  <div className="flex flex-wrap gap-2 content-start">
+                  <div className="flex flex-wrap gap-1 md:gap-2 content-start">
                     {ingredients.map((ingredient, index) => (
                       <Badge
                         key={index}
                         variant="secondary"
-                        className="flex items-center gap-1 px-3 py-1.5 whitespace-nowrap h-8"
+                        className="flex items-center gap-1 px-2 md:px-3 py-1 md:py-1.5 whitespace-nowrap h-6 md:h-8 text-xs"
                       >
                         {ingredient}
                         <button
@@ -196,7 +205,7 @@ export default function OnboardingSix() {
                           className="ml-1 rounded-full hover:bg-muted p-0.5"
                           aria-label={`Remove ${ingredient}`}
                         >
-                          <X className="h-3 w-3" />
+                          <X className="h-2 w-2 md:h-3 md:w-3" />
                         </button>
                       </Badge>
                     ))}
@@ -215,6 +224,7 @@ export default function OnboardingSix() {
             ease: "easeIn",
             delay: 1.2,
           }}
+          className="mt-2 md:mt-0"
         >
           <ContinueButton />
         </motion.div>

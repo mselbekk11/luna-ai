@@ -66,7 +66,7 @@ export default function OnboardingThree() {
 
   return (
     <OnboardingCard step={3} totalSteps={7} onBeforeNext={handleBeforeNext}>
-      <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center gap-6 md:gap-10 px-4 md:px-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -75,10 +75,12 @@ export default function OnboardingThree() {
             ease: "easeIn",
             delay: 0.3,
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-2 text-center"
         >
-          <h2 className="text-3xl font-bold">Choose a product format</h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Choose a product format
+          </h2>
+          <p className="text-gray-400 text-base md:text-lg">
             This will help us personalize your experience
           </p>
         </motion.div>
@@ -91,15 +93,15 @@ export default function OnboardingThree() {
             ease: "easeIn",
             delay: 0.6,
           }}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center w-full"
         >
-          <div className="grid grid-cols-4 gap-4 min-w-[750px]">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4 w-full max-w-[750px]">
             {categories.map((category) => {
               const isSelected = selectedCategory === category.name;
               return (
                 <button
                   key={category.name}
-                  className={`flex flex-col items-center gap-2 px-8 py-6 border rounded-sm transition-all
+                  className={`flex flex-col items-center gap-2 px-3 py-4 md:px-8 md:py-6 border rounded-sm transition-all
                   ${
                     isSelected
                       ? "border-[#535FCC] bg-[#20233B]"
@@ -107,7 +109,9 @@ export default function OnboardingThree() {
                   }`}
                   onClick={() => handleCategorySelect(category.name)}
                 >
-                  <category.icon />
+                  <div className="hidden md:block">
+                    <category.icon />
+                  </div>
                   <p
                     className={`text-sm font-semibold ${isSelected ? "text-white" : "text-gray-400"}`}
                   >

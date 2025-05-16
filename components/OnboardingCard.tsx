@@ -63,7 +63,7 @@ export default function OnboardingCard({
         totalSteps,
       }}
     >
-      <div className="rounded-lg shadow-md p-6 w-full max-w-4xl relative border border-[#383A42] min-h-[650px] flex flex-col overflow-hidden bg-[#0D0D0E] backdrop-blur-sm">
+      <div className="rounded-lg shadow-md p-6 w-full max-w-4xl relative border border-[#383A42] h-screen md:h-auto md:min-h-[650px] flex flex-col overflow-hidden bg-[#0D0D0E] backdrop-blur-sm">
         <div
           aria-hidden
           className="absolute inset-0 isolate opacity-45 contain-strict z-0"

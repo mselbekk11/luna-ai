@@ -43,8 +43,8 @@ export default function OnboardingFour() {
           }}
           className="flex flex-col items-center gap-2"
         >
-          <h2 className="text-3xl font-bold">Choose a Region</h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-2xl md:text-3xl font-bold">Choose a Region</h2>
+          <p className="text-gray-400 text-base md:text-lg text-center">
             This will help us identify banned ingredients in your region
           </p>
         </motion.div>

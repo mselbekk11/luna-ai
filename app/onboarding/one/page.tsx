@@ -40,11 +40,13 @@ export default function OnboardingOne() {
         >
           <div className="h-6 flex items-center justify-center">
             {user?.name && (
-              <h3 className="text-lg text-gray-300">Hi {user.name}</h3>
+              <h3 className="text-base md:text-lg text-gray-300">
+                Hi {user.name}
+              </h3>
             )}
           </div>
-          <h2 className="text-3xl font-bold">Welcome to Luna AI</h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-2xl md:text-3xl font-bold">Welcome to Luna AI</h2>
+          <p className="text-gray-400 text-base md:text-lg">
             Lets get you set up with your first product
           </p>
         </motion.div>
