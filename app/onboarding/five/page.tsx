@@ -148,12 +148,16 @@ export default function OnboardingFive() {
               </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4 w-full">
-              {primaryObjectives.map((primary) => {
+              {primaryObjectives.map((primary, index) => {
                 const isSelected = selectedPrimary === primary.name;
+                const hiddenOnMobile =
+                  index >= primaryObjectives.length - 4
+                    ? "hidden sm:flex"
+                    : "flex";
                 return (
                   <button
                     key={primary.name}
-                    className={`flex flex-col items-center gap-1 md:gap-2 py-2 border rounded-sm transition-all
+                    className={`${hiddenOnMobile} flex-col items-center gap-1 md:gap-2 py-2 border rounded-sm transition-all
                   ${
                     isSelected
                       ? "border-[#535FCC] bg-[#20233B]"
@@ -193,12 +197,16 @@ export default function OnboardingFive() {
               </p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4 w-full">
-              {secondaryObjectives.map((secondary) => {
+              {secondaryObjectives.map((secondary, index) => {
                 const isSelected = selectedSecondary.includes(secondary.name);
+                const hiddenOnMobile =
+                  index >= secondaryObjectives.length - 4
+                    ? "hidden sm:flex"
+                    : "flex";
                 return (
                   <button
                     key={secondary.name}
-                    className={`flex flex-col items-center gap-1 md:gap-2 py-2 border rounded-sm transition-all
+                    className={`${hiddenOnMobile} flex-col items-center gap-1 md:gap-2 py-2 border rounded-sm transition-all
                   ${
                     isSelected
                       ? "border-[#535FCC] bg-[#20233B]"
