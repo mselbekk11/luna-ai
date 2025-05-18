@@ -50,6 +50,6 @@ This was the most important to address first because if the end user doesnt even
 ## 🔍 Bonus: UX Issue the Original Team Likely Missed
 
 **No Reinforcement of Progress or Momentum.**  
-The original flow likely failed to build a sense of momentum. Users had no feedback on how far they’d progressed or what was coming next. I introduced a visual stepper to make users feel like they were making meaningful progress and could also see how much was left.
+The original flow likely failed to build a sense of momentum. Users had no feedback on how far they’d progressed or what was coming next. I introduced a visual stepper to make users feel like they were making meaningful progress and could also see how much was left
 
 ---
