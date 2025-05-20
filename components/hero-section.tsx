@@ -121,7 +121,7 @@ export default function HeroSection() {
                   delay={0.2}
                   className="mt-2 text-balance text-3xl md:text-6xl"
                 >
-                  Your Intelligent R&D Assistant
+                  Your Intelligent R&D Assistant.
                 </TextEffect>
                 <TextEffect
                   per="line"
